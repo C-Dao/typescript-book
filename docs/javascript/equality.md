@@ -5,8 +5,8 @@ be resilient against programming errors `==` tries to do type coercion between t
 string to a number so that you can compare with a number as shown below:
 
 ```js
-console.log(5 == "5"); // true   , TS Error
-console.log(5 === "5"); // false , TS Error
+console.log(5 == "5"); // true    , TS Error
+console.log(5 === "5"); // false  , TS Error
 ```
 
 However, the choices JavaScript makes are not always ideal. For example, in the below example the first statement is false
@@ -15,11 +15,11 @@ empty string (`""`) are falsy (i.e. behave like `false`) and are therefore equal
 are false when you use `===`.
 
 ```js
-console.log("" == "0"); // false
-console.log(0 == ""); // true
+console.log("" == "0"); // false  , TS Error
+console.log(0 == ""); // true     , TS Error
 
-console.log("" === "0"); // false
-console.log(0 === ""); // false
+console.log("" === "0"); // false , TS Error
+console.log(0 === ""); // false   , TS Error
 ```
 
 > Note that `string == number` and `string === number` are both compile time errors in TypeScript, so you don't normally need to worry about this.
